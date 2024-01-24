@@ -27,7 +27,7 @@ export default function Daily(props) {
   }, [state.testDegree]);
 
   return (
-    <div className="Daily  p-2 justify-between text-center forecast-border gap-x-2 bg-white">
+    <div className="Daily p-2 justify-between text-center forecast-border gap-x-2 bg-white">
       <div className="grow flex justify-between">
         <h2 className="text-left  font-semibold">Current Weather</h2>
       </div>
@@ -49,31 +49,24 @@ export default function Daily(props) {
           <p className="capitalize">{apiData.current.weather[0].description}</p>
         </div>
 
-        <div className="text-left p-2 grow">
-          <div className="current-weather-data ">
-            <p>Feels like</p>{" "}
-            <p>
-              {feelsLike}°{state.testDegree}
-            </p>
-          </div>
+        <div className="text-left p-2 ">
+          {/* <span className="current-weather-data "> */}
+            Feels like: {feelsLike}°{state.testDegree}{" "}
+          {/* </span> */}
 
-          <div className="current-weather-data ">
+          {/* <span className="current-weather-data "> */}
             <p>
-              H: {high}°{state.testDegree}
+              H: {high}°{state.testDegree} L: {low}°{state.testDegree}
             </p>{" "}
-            <p>
-              L: {low}°{state.testDegree}
-            </p>{" "}
-          </div>
+          
+          {/* </span> */}
 
-          <div className="current-weather-data">
-            <p>Humidity</p>
-            <p>{apiData.current.humidity}%</p>
-          </div>
-          <div className="current-weather-data">
-            <p>Wind Speed</p>
-            <p>{apiData.current.wind_speed}</p>
-          </div>
+          {/* <span className="current-weather-data"> */}
+            <p>Humidity {apiData.current.humidity}%</p>
+          {/* </span> */}
+          {/* <span className="current-weather-data"> */}
+            <p>Wind Speed {apiData.current.wind_speed}</p>
+          {/* </span> */}
         </div>
       </div>
     </div>
